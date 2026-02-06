@@ -281,12 +281,18 @@ header {
     align-items: center;
     background: var(--accent-gradient);
     border-radius: 8px;
-    padding: 8px 8px 8px 16px;
+    padding: 12px 16px;
     gap: 12px;
-    max-width: 95%;
     width: 100%;
+    max-width: 100%;
     box-shadow: 0 4px 15px rgba(162, 28, 175, 0.3);
     box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .winget-container {
+        max-width: 350px; /* Match support buttons */
+    }
 }
 
 .winget-code {
@@ -297,12 +303,7 @@ header {
     white-space: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
-}
-
-@media (max-width: 480px) {
-    .winget-code {
-        font-size: 0.8rem;
-    }
+    flex: 1;
 }
 .winget-code::before {
     content: ">";
