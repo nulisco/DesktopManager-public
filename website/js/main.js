@@ -110,4 +110,26 @@ document.addEventListener('DOMContentLoaded', () => {
             openPrivacy();
         }
     });
+
+    // Lightbox Logic
+    const imageModal = document.getElementById('imageModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const screenshots = document.querySelectorAll('.screenshot-card img');
+
+    if (imageModal && lightboxImg) {
+        screenshots.forEach(img => {
+            img.parentElement.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                imageModal.showModal();
+            });
+        });
+
+        const closeImageModal = () => imageModal.close();
+
+        closeLightbox.addEventListener('click', closeImageModal);
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) closeImageModal();
+        });
+    }
 });
