@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesktopManager - Optimize your screen space</title>
+    <meta name="description" content="Virtual Desktops for Windows with fast switching. KDE-like desktop manager for power users.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logoPrimary" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#E879F9" />
+                        <stop offset="1" stop-color="#A21CAF" />
+                    </linearGradient>
+                    <linearGradient id="logoSecondary" x1="50" y1="50" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#8B5CF6" />
+                        <stop offset="1" stop-color="#4C1D95" />
+                    </linearGradient>
+                    <linearGradient id="logoTertiary" x1="50" y1="50" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#6366F1" />
+                        <stop offset="1" stop-color="#312E81" />
+                    </linearGradient>
+                    <filter id="logoShadow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+                    </filter>
+                </defs>
+                <g transform="translate(128 128) scale(1.25) translate(-128 -128)">
+                    <rect x="88" y="48" width="120" height="120" rx="16" fill="url(#logoTertiary)" opacity="0.6" />
+                    <rect x="68" y="68" width="120" height="120" rx="16" fill="url(#logoSecondary)" opacity="0.8" filter="url(#logoShadow)" />
+                    <rect x="48" y="88" width="120" height="120" rx="16" fill="url(#logoPrimary)" filter="url(#logoShadow)" />
+                    <rect x="62" y="102" width="92" height="92" rx="10" stroke="white" stroke-opacity="0.3" stroke-width="2" fill="none"/>
+                    <g transform="translate(116, 114)" stroke="white" stroke-width="2" stroke-linecap="round" stroke-opacity="0.6">
+                        <line x1="0" y1="5" x2="6" y2="5" />
+                        <rect x="12" y="0" width="6" height="6" rx="0.5" />
+                        <path d="M24 0 L30 6 M30 0 L24 6" />
+                    </g>
+                </g>
+            </svg>
+            DesktopManager
+        </a>
+        <button class="theme-toggle" id="themeBtn" aria-label="Toggle Theme">
+            <span id="themeIcon">🌙</span>
+        </button>
+    </header>
+
+    <section class="hero">
+        
+        <div class="hero-image-container">
+            <svg class="hero-image" viewBox="90 10 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="primaryGradHero" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#E879F9" />
+                  <stop offset="1" stop-color="#A21CAF" />
+                </linearGradient>
+                <linearGradient id="secondaryGradHero" x1="20" y1="20" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#8B5CF6" />
+                  <stop offset="1" stop-color="#4C1D95" />
+                </linearGradient>
+                <linearGradient id="tertiaryGradHero" x1="20" y1="20" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#6366F1" />
+                  <stop offset="1" stop-color="#312E81" />
+                </linearGradient>
+                
+                <filter id="tileShadowHero" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.3"/>
+                </filter>
+              </defs>
+              
+              <g transform="translate(100, 20)">
+                  <rect x="30" y="0" width="80" height="80" rx="12" fill="url(#tertiaryGradHero)" opacity="0.6" />
+                  <rect x="15" y="15" width="80" height="80" rx="12" fill="url(#secondaryGradHero)" opacity="0.8" filter="url(#tileShadowHero)"/>
+                  <rect x="0" y="30" width="80" height="80" rx="12" fill="url(#primaryGradHero)" filter="url(#tileShadowHero)"/>
+                  <rect x="8" y="38" width="64" height="64" rx="8" stroke="white" stroke-opacity="0.3" stroke-width="2" fill="none"/>
+                  <g transform="translate(42, 46)" stroke="white" stroke-width="2" stroke-linecap="round" stroke-opacity="0.6">
+                      <line x1="0" y1="3" x2="4" y2="3" />
+                      <rect x="8" y="0" width="4" height="4" rx="0.5" />
+                      <path d="M16 0 L20 4 M20 0 L16 4" />
+                  </g>
+              </g>
+            </svg>
+        </div>
+
+        <div class="hero-text">
+            <h1>Optimize your screen space.</h1>
+            <p>Virtual Desktops for Windows with fast switching. Ever wanted a KDE-like desktop manager, app pinning to virtual desktops, and a sensible launcher? Try DesktopManager.</p>
+            
+            <div class="privacy-checks">
+                <div class="check-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    No Ads
+                </div>
+                <div class="check-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    No Tracking
+                </div>
+                <div class="check-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    No Data Collection
+                    <a href="#privacy" id="privacyLinkHero" style="font-size: 0.8rem; color: var(--text-secondary); margin-left: 8px; text-decoration: underline;">Learn more</a>
+                </div>
+            </div>
+
+            <div class="install-actions">
+                <div class="button-row">
+                    <a href="#" class="cta-button">
+                        <img src="https://apps.microsoft.com/assets/icons/logo-plated-256x256.png" alt="Microsoft Store Logo" style="width: 20px; height: 20px;">
+                        <span>Get it on Microsoft Store</span>
+                    </a>
+                    
+                    <a href="#" class="bmc-button" title="Support Development">
+                        <img src="https://cdn.buymeacoffee.com/assets/homepage/meta/apple-icon-120x120.png" alt="BMC Logo" style="width: 24px; height: 24px; border-radius: 4px;">
+                        <span>Buy me a coffee</span>
+                    </a>
+                    
+                    <a href="https://ko-fi.com/desktopmanager" target="_blank" class="kofi-button" title="Support on Ko-fi">
+                        <img src="https://storage.ko-fi.com/cdn/logomarkLogo.png" alt="Ko-fi Logo" style="width: 24px; height: 24px;">
+                        <span>Support on Ko-fi</span>
+                    </a>
+                </div>
+
+                <div class="winget-container">
+                    <code class="winget-code" id="wingetCmd">winget install DesktopManager</code>
+                    <button class="copy-btn" id="copyBtn" aria-label="Copy Command" title="Copy to clipboard">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev" id="prevBtn" aria-label="Previous Slide">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+
+            <div class="carousel-container" id="carousel">
+                <div class="screenshot-card">
+                    <img src="assets/1.png" alt="DesktopManager Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/2.png" alt="Rules Engine" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/3.png" alt="Virtual Desktops View" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/4.png" alt="Settings Configuration" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+
+            <button class="nav-btn next" id="nextBtn" aria-label="Next Slide">
+                <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <h2>Virtual Desktop Manager you needed.</h2>
+        <p>Productivity tools should serve the purpose, not track you. DesktopManager is clean, private, and bloat-free. No accounts, no telemetry, no nonsense.</p>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>⚡ Instant Switching</h3>
+            <p>Navigate between desktops faster than ever with custom hotkeys and fluid animations.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🤖 Rules Engine</h3>
+            <p>Automatically move apps to specific desktops based on title, process name, or window class.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🎨 Native Design</h3>
+            <p>Built with WinUI 3 to look and feel exactly like a part of Windows 11.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🐧 Linux Feel</h3>
+            <p>Advanced virtual desktop management for Windows, inspired by the flexibility of KDE.</p>
+        </div>
+    </section>
+
+    <dialog id="privacyModal">
+        <div class="modal-header">
+            <h2>Privacy Policy</h2>
+            <button class="close-modal" id="closePrivacy" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h3>Summary</h3>
+            <p>DesktopManager does not collect, store, or transmit any personal data.</p>
+
+            <h3>Data Collection</h3>
+            <p>DesktopManager collects no data. The app:</p>
+            <ul>
+                <li>Does not connect to the internet</li>
+                <li>Does not collect analytics or telemetry</li>
+                <li>Does not track usage</li>
+                <li>Does not require an account</li>
+            </ul>
+
+            <h3>GitHub Issues</h3>
+            <p>If you choose to submit a bug report or feature request via GitHub Issues, you voluntarily provide that information. GitHub's privacy policy applies to any data you share there.</p>
+
+            <h3>Contact</h3>
+            <p>For questions about this privacy policy, please open an issue on our <a href="https://github.com/nulisco/DesktopManager-public/issues" target="_blank" rel="noopener">GitHub repository</a>.</p>
+        </div>
+    </dialog>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/nulisco/DesktopManager-public" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+                    <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.065 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a href="https://x.com/NulisCoDesktop" target="_blank" rel="noopener" class="social-icon" title="X (Twitter)">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="mailto:main@nulis.co" class="social-icon" title="Email Support">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.8rem;">
+                &copy; 2026 DesktopManager. All rights reserved.
+                &nbsp;&middot;&nbsp;
+                <a href="privacy.html" id="privacyFooterLink" style="color: var(--text-secondary); text-decoration: none;">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

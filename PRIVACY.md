@@ -19,4 +19,4 @@ If you choose to submit a bug report or feature request via GitHub Issues, you v
 
 ## Contact
 
-For questions about this privacy policy, contact: main@nulis.co
+For questions about this privacy policy, please open an issue on our [GitHub repository](https://github.com/nulisco/DesktopManager-public/issues).
