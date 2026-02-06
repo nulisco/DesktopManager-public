@@ -48,6 +48,8 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -167,7 +169,15 @@ header {
     font-weight: 500;
     color: var(--text-primary);
     font-size: 0.95rem;
+    align-items: flex-start;
 }
+
+@media (max-width: 900px) {
+    .privacy-checks {
+        align-items: center;
+    }
+}
+
 .check-item { display: flex; align-items: center; gap: 8px; }
 .check-item svg { color: var(--success-color); width: 20px; height: 20px; }
 
@@ -179,11 +189,24 @@ header {
     align-items: flex-start;
 }
 
+@media (max-width: 900px) {
+    .install-actions {
+        align-items: center;
+    }
+}
+
 .button-row {
     display: flex;
     gap: 12px;
     flex-wrap: nowrap;
     width: 100%;
+}
+
+@media (max-width: 900px) {
+    .button-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 .cta-button, .bmc-button, .kofi-button {
@@ -199,6 +222,14 @@ header {
     white-space: nowrap;
     font-size: 0.95rem;
     flex: 1;
+}
+
+@media (max-width: 900px) {
+    .cta-button, .bmc-button, .kofi-button {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+    }
 }
 .cta-button {
     background: var(--text-primary);
@@ -295,12 +326,14 @@ header {
     margin: 0 auto 5rem;
     padding: 0 1rem;
     position: relative;
+    overflow: hidden;
 }
 
 .carousel-wrapper {
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .carousel-container {
@@ -317,6 +350,7 @@ header {
 
 .screenshot-card {
     flex: 0 0 85%;
+    max-width: 85vw;
     scroll-snap-align: center;
     background: var(--surface-color);
     border-radius: 12px;
@@ -386,6 +420,12 @@ header {
     padding: 0 2rem;
 }
 
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr; /* Stack features top to bottom */
+    }
+}
+
 .feature-card {
     background: var(--surface-color);
     padding: 2rem;
@@ -413,6 +453,13 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
+}
+
+@media (max-width: 600px) {
+    #privacyModal {
+        width: 95%;
+        max-height: 90vh;
+    }
 }
 
 #privacyModal::backdrop {
