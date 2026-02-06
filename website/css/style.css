@@ -283,7 +283,7 @@ header {
     border-radius: 8px;
     padding: 12px 16px;
     gap: 12px;
-    width: 100%;
+    width: fit-content; /* Only as large as the text */
     max-width: 100%;
     box-shadow: 0 4px 15px rgba(162, 28, 175, 0.3);
     box-sizing: border-box;
@@ -291,7 +291,8 @@ header {
 
 @media (max-width: 900px) {
     .winget-container {
-        max-width: 350px; /* Match support buttons */
+        width: 100%; /* Go back to full width matching buttons on mobile */
+        max-width: 350px;
     }
 }
 
@@ -303,7 +304,12 @@ header {
     white-space: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
-    flex: 1;
+}
+
+@media (max-width: 480px) {
+    .winget-code {
+        font-size: 0.85rem; /* Slight shrink for very small phones */
+    }
 }
 .winget-code::before {
     content: ">";
@@ -358,7 +364,7 @@ header {
 /* --- SCREENSHOT CAROUSEL --- */
 .carousel-section {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto 5rem;
     padding: 0;
     position: relative;
