@@ -172,7 +172,7 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px 24px;
     margin-bottom: 2rem;
     font-weight: 500;
     color: var(--text-primary);
@@ -183,10 +183,16 @@ header {
 @media (max-width: 900px) {
     .privacy-checks {
         justify-content: center;
+        padding: 0 1rem;
     }
 }
 
-.check-item { display: flex; align-items: center; gap: 8px; }
+.check-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+    white-space: nowrap;
+}
 .check-item svg { color: var(--success-color); width: 20px; height: 20px; }
 
 /* Actions */
@@ -278,7 +284,9 @@ header {
     padding: 8px 8px 8px 16px;
     gap: 12px;
     max-width: 100%;
+    width: 100%;
     box-shadow: 0 4px 15px rgba(162, 28, 175, 0.3);
+    box-sizing: border-box;
 }
 
 .winget-code {
@@ -317,12 +325,20 @@ header {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 3rem;
-        padding-top: 2rem;
+        padding: 2rem 1.5rem; /* Increased side padding */
     }
-    .hero-text { display: flex; flex-direction: column; align-items: center; }
+    .hero-text { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%;
+    }
     .hero-image-container { order: -1; justify-content: center; }
     .hero h1 { font-size: 2.5rem; }
-    .install-actions { align-items: center; }
+    .install-actions { 
+        align-items: center; 
+        width: 100%;
+    }
     .privacy-checks { align-items: center; }
     .button-row { justify-content: center; flex-wrap: wrap; }
     .cta-button, .bmc-button, .kofi-button { flex: none; width: 100%; max-width: 300px; }
