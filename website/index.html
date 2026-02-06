@@ -6,6 +6,8 @@
     <title>DesktopManager - Optimize your screen space</title>
     <meta name="description" content="Virtual Desktops for Windows with fast switching. KDE-like desktop manager for power users.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 </head>
@@ -220,9 +222,15 @@
         <button class="close-lightbox" id="closeLightbox" aria-label="Close">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
+        <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous Image">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
         <div class="lightbox-content">
             <img id="lightboxImg" src="" alt="Enlarged Screenshot">
         </div>
+        <button class="lightbox-nav next" id="lightboxNext" aria-label="Next Image">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
     </dialog>
 
     <footer>

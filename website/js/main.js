@@ -115,21 +115,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageModal = document.getElementById('imageModal');
     const lightboxImg = document.getElementById('lightboxImg');
     const closeLightbox = document.getElementById('closeLightbox');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
     const screenshots = document.querySelectorAll('.screenshot-card img');
+    
+    let currentIndex = 0;
 
     if (imageModal && lightboxImg) {
-        screenshots.forEach(img => {
+        const updateLightbox = (index) => {
+            currentIndex = index;
+            lightboxImg.src = screenshots[currentIndex].src;
+        };
+
+        screenshots.forEach((img, index) => {
             img.parentElement.addEventListener('click', () => {
-                lightboxImg.src = img.src;
+                updateLightbox(index);
                 imageModal.showModal();
             });
         });
 
-        const closeImageModal = () => imageModal.close();
+        const nextImage = (e) => {
+            if (e) e.stopPropagation();
+            updateLightbox((currentIndex + 1) % screenshots.length);
+        };
 
-        closeLightbox.addEventListener('click', closeImageModal);
+        const prevImage = (e) => {
+            if (e) e.stopPropagation();
+            updateLightbox((currentIndex - 1 + screenshots.length) % screenshots.length);
+        };
+
+        if (lightboxNext) lightboxNext.addEventListener('click', nextImage);
+        if (lightboxPrev) lightboxPrev.addEventListener('click', prevImage);
+
+        const closeImageModal = () => imageModal.close();
+        if (closeLightbox) closeLightbox.addEventListener('click', closeImageModal);
+        
         imageModal.addEventListener('click', (e) => {
             if (e.target === imageModal) closeImageModal();
+        });
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (!imageModal.open) return;
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'Escape') closeImageModal();
         });
     }
 });

@@ -43,8 +43,9 @@
 
 html, body {
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     position: relative;
+    width: 100%;
 }
 
 body {
@@ -57,6 +58,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 /* --- NAVIGATION --- */
@@ -167,18 +170,19 @@ header {
 /* Privacy Checkmarks */
 .privacy-checks {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
     margin-bottom: 2rem;
     font-weight: 500;
     color: var(--text-primary);
     font-size: 0.95rem;
-    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 @media (max-width: 900px) {
     .privacy-checks {
-        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -326,11 +330,11 @@ header {
 
 /* --- SCREENSHOT CAROUSEL --- */
 .carousel-section {
-    max-width: 100%;
+    max-width: 800px;
     margin: 0 auto 5rem;
     padding: 0;
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* Allow buttons to sit outside if needed */
 }
 
 .carousel-wrapper {
@@ -338,14 +342,13 @@ header {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 0 1rem;
 }
 
 .carousel-container {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 20px;
+    gap: 0;
     padding: 20px 0;
     scrollbar-width: none;
     scroll-behavior: smooth;
@@ -354,8 +357,8 @@ header {
 .carousel-container::-webkit-scrollbar { display: none; }
 
 .screenshot-card {
-    flex: 0 0 85%;
-    max-width: 85vw;
+    flex: 0 0 100%;
+    width: 100%;
     scroll-snap-align: center;
     background: var(--surface-color);
     border-radius: 12px;
@@ -398,7 +401,11 @@ header {
 .nav-btn.next { right: -24px; }
 .nav-btn svg { width: 24px; height: 24px; fill: currentColor; }
 
-@media (min-width: 768px) { .screenshot-card { flex: 0 0 70%; } }
+@media (min-width: 768px) { 
+    .screenshot-card { 
+        flex: 0 0 100%; 
+    } 
+}
 @media (max-width: 600px) { 
     .nav-btn { display: none; } 
 }
@@ -423,13 +430,21 @@ header {
     max-width: 1000px;
     margin: 0 auto 5rem;
     padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
     .features {
-        grid-template-columns: 1fr !important;
         display: flex;
         flex-direction: column;
+        align-items: stretch;
+        padding: 0 1.5rem;
+    }
+    
+    .feature-card {
+        width: 100%;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -439,6 +454,7 @@ header {
     border-radius: 12px;
     border: 1px solid var(--border-color);
     transition: transform 0.2s ease;
+    box-sizing: border-box;
 }
 .feature-card:hover { transform: translateY(-3px); }
 .feature-card h3 { margin-bottom: 0.5rem; }
@@ -653,6 +669,31 @@ footer {
     transition: background 0.2s;
 }
 .close-lightbox:hover { background: rgba(255, 255, 255, 0.2); }
+
+.lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    z-index: 100;
+    transition: all 0.2s;
+}
+.lightbox-nav:hover { background: rgba(255, 255, 255, 0.2); scale: 1.1; }
+.lightbox-nav.prev { left: 2rem; }
+.lightbox-nav.next { right: 2rem; }
+
+@media (max-width: 600px) {
+    .lightbox-nav { padding: 8px; }
+    .lightbox-nav.prev { left: 0.5rem; }
+    .lightbox-nav.next { right: 0.5rem; }
+    .close-lightbox { top: 1rem; right: 1rem; }
+}
 
 .lightbox-modal {
     opacity: 0;
