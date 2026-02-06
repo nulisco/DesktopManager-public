@@ -283,7 +283,7 @@ header {
     border-radius: 8px;
     padding: 8px 8px 8px 16px;
     gap: 12px;
-    max-width: 100%;
+    max-width: 95%;
     width: 100%;
     box-shadow: 0 4px 15px rgba(162, 28, 175, 0.3);
     box-sizing: border-box;
@@ -323,25 +323,29 @@ header {
 @media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
         gap: 3rem;
-        padding: 2rem 1.5rem; /* Increased side padding */
+        padding: 2rem 2rem 2rem 1.5rem;
     }
     .hero-text { 
         display: flex; 
         flex-direction: column; 
-        align-items: center; 
+        align-items: flex-start;
         width: 100%;
     }
     .hero-image-container { order: -1; justify-content: center; }
     .hero h1 { font-size: 2.5rem; }
     .install-actions { 
-        align-items: center; 
+        align-items: flex-start;
         width: 100%;
     }
-    .privacy-checks { align-items: center; }
-    .button-row { justify-content: center; flex-wrap: wrap; }
-    .cta-button, .bmc-button, .kofi-button { flex: none; width: 100%; max-width: 300px; }
+    .privacy-checks {
+        justify-content: flex-start;
+        padding: 0;
+        align-items: flex-start;
+    }
+    .button-row { justify-content: flex-start; flex-wrap: wrap; }
+    .cta-button, .bmc-button, .kofi-button { flex: none; width: 100%; max-width: 350px; }
 }
 
 /* --- SCREENSHOT CAROUSEL --- */
