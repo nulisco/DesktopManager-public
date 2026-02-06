@@ -298,6 +298,12 @@ header {
     overflow-x: auto;
     scrollbar-width: none;
 }
+
+@media (max-width: 480px) {
+    .winget-code {
+        font-size: 0.8rem;
+    }
+}
 .winget-code::before {
     content: ">";
     color: rgba(255, 255, 255, 0.8);
