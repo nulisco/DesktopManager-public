@@ -357,11 +357,18 @@ header {
 
 /* --- SCREENSHOT CAROUSEL --- */
 .carousel-section {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto 5rem;
     padding: 0;
     position: relative;
-    overflow: visible; /* Allow buttons to sit outside if needed */
+    overflow: visible;
+}
+
+@media (max-width: 900px) {
+    .carousel-section {
+        max-width: 90vw;
+    }
 }
 
 .carousel-wrapper {
