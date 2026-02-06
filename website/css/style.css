@@ -422,7 +422,9 @@ header {
 
 @media (max-width: 768px) {
     .features {
-        grid-template-columns: 1fr; /* Stack features top to bottom */
+        grid-template-columns: 1fr !important;
+        display: flex;
+        flex-direction: column;
     }
 }
 
