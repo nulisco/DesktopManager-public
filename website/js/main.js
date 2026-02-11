@@ -111,6 +111,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Microsoft Store Link Logic (Smart Switch)
+    const msStoreBtn = document.getElementById('msStoreBtn');
+    if (msStoreBtn) {
+        const isWindows = /Windows/i.test(navigator.userAgent);
+        if (isWindows) {
+            msStoreBtn.href = "ms-windows-store://pdp/?productid=9P4RR5DG98D0";
+            msStoreBtn.removeAttribute('target'); // Open in app, not new tab
+            msStoreBtn.removeAttribute('rel');
+        }
+    }
+
     // Lightbox Logic
     const imageModal = document.getElementById('imageModal');
     const lightboxImg = document.getElementById('lightboxImg');
